@@ -1,4 +1,4 @@
-name: deploy-container
+name: Build container
 on:
   push:
     branches:
@@ -10,9 +10,8 @@ defaults:
     working-directory: container
 jobs:
   build:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm run build
-
